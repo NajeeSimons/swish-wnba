@@ -40,12 +40,9 @@ We don’t use angle or defender distance in this version; the public WNBA shot 
 
 ## Outputs
 <img width="1200" height="900" alt="swish_3pt_top15_2024_2025" src="https://github.com/user-attachments/assets/452c4d1e-bb2b-4828-bdd3-85c2f77aacf5" />
+<img width="1200" height="900" alt="swish_top15_overall_2024_2025" src="https://github.com/user-attachments/assets/d0dd9482-31f6-4b4f-99c7-c5f1ed4e3b3c" />
 
 
-- `player_swish_overall_*.csv` / `player_swish_3pt_*.csv` — player SWISH scores  
-- `swish_top15_overall_*.png` — top 15 shotmakers (bar chart)  
-- `swish_actual_vs_expected_*.png` — actual vs expected points per shot (scatter)  
-- `swish_bottom15_overall_*.png` — bottom 15 (underperformers vs expectation)
 
 ---
 
