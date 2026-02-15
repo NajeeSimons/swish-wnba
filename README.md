@@ -1,0 +1,52 @@
+# SWISH — WNBA Contextual Shotmaking
+
+**SWISH** = *Shotmaking With Intelligent Shot Handling* — a metric for who scores more (or less) than expected given shot difficulty (distance, 2 vs 3, clock, context).
+
+- **SWISH score** = Actual points per shot − Expected points per shot (per player).  
+- **+0.15** ≈ 15 extra points per 100 shots above expectation (not a shooting %).
+
+---
+
+## How to run
+
+1. **Clone the repo** and open the folder in R/RStudio.
+
+2. **Install R packages** (if needed):
+   ```r
+   install.packages(c("dplyr", "ggplot2", "readr", "caret", "pROC"))
+   ```
+
+3. **Get shot data** (e.g. [shufinskiy/nba_data](https://github.com/shufinskiy/nba_data)) and put the WNBA shot files in a `wnba_data/` folder in this directory.
+
+4. **Run the pipeline:**
+   ```r
+   setwd("path/to/swish-wnba")   # or Session → Set Working Directory
+   source("run_swish.R")
+   ```
+   Outputs (CSVs + plots) go to `output/`.
+
+---
+
+## What the model uses (shot attributes)
+
+- **Distance** (and distance²) — rim vs mid-range vs 3  
+- **2 vs 3** — shot type  
+- **Time** — shot clock remaining, game seconds remaining  
+- **Context** — clutch (e.g. last 5 min close), corner 3, pull-up  
+
+We don’t use angle or defender distance in this version; the public WNBA shot data we use doesn’t include them in the pipeline yet.
+
+---
+
+## Outputs
+
+- `player_swish_overall_*.csv` / `player_swish_3pt_*.csv` — player SWISH scores  
+- `swish_top15_overall_*.png` — top 15 shotmakers (bar chart)  
+- `swish_actual_vs_expected_*.png` — actual vs expected points per shot (scatter)  
+- `swish_bottom15_overall_*.png` — bottom 15 (underperformers vs expectation)
+
+---
+
+## License
+
+MIT (or add your preferred license).
